@@ -17,11 +17,6 @@ app.use(express.json());
 // require("./routes/apiNotes")(app);
 // require("./routes/htmlRoutes")(app);
 
-// Basic route tht sends the user first to the AJAX Page // Change this for the file we want to send
-app.get("/notes", function (req, res) {
-  res.sendFile(path.join(_direname, "views", "add.html"));
-});
-
 app.get("/add", function (req, res) {
   return `index.html`;
 });
