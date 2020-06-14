@@ -14,8 +14,8 @@ app.use(express.json());
 // }
 
 // Routing
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// require("./routes/apiRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 
 // Basic route tht sends the user first to the AJAX Page // Change this for the file we want to send
 app.get("/notes", function (req, res) {
