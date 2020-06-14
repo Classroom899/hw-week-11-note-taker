@@ -13,6 +13,9 @@ module.exports = function (app) {
   app.get("/index.html", function (req, res) {
     res.json(starData);
   });
+  app.post("api/notes.html", function (req, res) {
+    console.log(req.body);
+  });
 };
 
 // app.get("/notes", function (req, res) {

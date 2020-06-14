@@ -17,9 +17,9 @@ app.use(express.json());
 // require("./routes/apiNotes")(app);
 // require("./routes/htmlRoutes")(app);
 
-app.get("/add", function (req, res) {
-  return `index.html`;
-});
+// app.get("/add", function (req, res) {
+//   return `index.html`;
+// });
 
 // Posting the actual notes and takes in JSON input
 app.post("/api/notes", function (req, res) {});
