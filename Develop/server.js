@@ -30,9 +30,7 @@ app.get("/add", function (req, res) {
 app.post("/api/notes", function (req, res) {});
 
 // Listen to this port here
-app.listen(PORT, function () {
-  console.log("App listening on PORT: " + PORT);
-});
+app.listen(PORT, function () {});
 
 // Start our server
 // server.listen(PORT, function () {
