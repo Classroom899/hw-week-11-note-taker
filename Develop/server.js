@@ -3,7 +3,7 @@
 // Sets up the Express App
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Heroku being used for deployment
 
 // Sets up the Express app to handle app/data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -29,11 +29,13 @@ app.get("/add", function (req, res) {
 // Posting the actual notes and takes in JSON input
 app.post("/api/notes", function (req, res) {});
 
-// listen to this port here
-app.listen.PORT;
+// Listen to this port here
+app.listen(PORT, function () {
+  console.log("App listening on PORT: " + PORT);
+});
 
 // Start our server
-server.listen(PORT, function () {
-  // Callback triggered?
-  console.log("Server is listening on:  +" + PORT);
-});
+// server.listen(PORT, function () {
+// Callback triggered?
+//   console.log("Server is listening on:  +" + PORT);
+// });
