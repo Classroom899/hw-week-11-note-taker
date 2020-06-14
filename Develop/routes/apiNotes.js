@@ -23,6 +23,8 @@ module.exports = function (app) {
   // POST request
   app.post("api/notes.html", function (req, res) {
     console.log(req.body);
+    let newNote = req.body;
+    let id = dbNotes.length;
   });
 };
 
