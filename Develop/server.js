@@ -5,12 +5,13 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-// Sets up the Express app to handle app parsing
-app.use(express.urlencoded);
+// Sets up the Express app to handle app/data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-function handleRequest() {
-  //    case "/index.html":
-}
+// function handleRequest() {
+//    case "/index.html":
+// }
 
 // Basic route tht sends the user first to the AJAX Page // Change this for the file we want to send
 app.get("/notes", function (req, res) {
