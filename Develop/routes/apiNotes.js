@@ -26,10 +26,10 @@ app.get("");
 // POST request
 app.post("api/notes.html", function (req, res) {
   console.log(req.body);
-  let newNote = req.body;
+  let activeNote = req.body;
   let id = dbNotes.length; // Will need to figure out how to post to db.json
-  newNote.id = id + 1; // new note's id and adding one to it each time a new note is added
-  dbNote.push(newNote);
+  activeNote.id = id + 1; // new note's id and adding one to it each time a new note is added
+  dbNote.push(activeNote);
 });
 
 app.get("/notes", function (req, res) {
