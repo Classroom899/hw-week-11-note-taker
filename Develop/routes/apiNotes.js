@@ -21,7 +21,9 @@ module.exports = function (app) {
   });
 };
 
-app.get("");
+app.get("/api/notes", function (req, res) {
+  return res.json(dbNotes);
+});
 
 // POST request
 app.post("api/notes.html", function (req, res) {
