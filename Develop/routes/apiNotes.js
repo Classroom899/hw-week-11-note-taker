@@ -19,14 +19,18 @@ module.exports = function (app) {
   app.get("/index.html", function (req, res) {
     res.sendFile(path.join(_dirname, "/routes/htmlRoutes.js"));
   });
-
-  // POST request
-  app.post("api/notes.html", function (req, res) {
-    console.log(req.body);
-    let newNote = req.body;
-    let id = dbNotes.length;
-  });
 };
+
+app.get("");
+
+// POST request
+app.post("api/notes.html", function (req, res) {
+  console.log(req.body);
+  let newNote = req.body;
+  let id = dbNotes.length; // Will need to figure out how to post to db.json
+  newNote.id = id + 1; // new note's id and adding one to it each time a new note is added
+  dbNote.push(newNote);
+});
 
 app.get("/notes", function (req, res) {
   res.sendFile(path.join(_dirname, "/public/assets/js/index.js"));
