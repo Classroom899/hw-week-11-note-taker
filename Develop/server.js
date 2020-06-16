@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000; // Heroku being used for deployment
 // Sets up the Express app to handle app/data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 // Parsing the dbNotes into JSON data and creating that readFilesSync path along with adding a catch and throw for errors
 // const dbNotes = JSON.parse(
