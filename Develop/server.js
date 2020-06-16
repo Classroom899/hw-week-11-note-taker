@@ -9,13 +9,26 @@ const PORT = process.env.PORT || 3000; // Heroku being used for deployment
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Parsing the dbNotes into JSON data and creating that readFilesSync path along with adding a catch and throw for errors
+// const dbNotes = JSON.parse(
+//   fs.readFilesSync(
+//     path.join(_dirname, "/db.json"),
+//     (err,
+//     (app) => {
+//       if (err) throw err;
+//     })
+//   )
+// );
+
+// Might just be a readfile command and only one command
+
 // function handleRequest() {
 //    case "/index.html":
 // }
 
 // Routing
-// require("./routes/apiNotes")(app);
-// require("./routes/htmlRoutes")(app);
+require("./routes/apiNotes")(app);
+require("./routes/htmlRoutes")(app);
 
 // app.get("/add", function (req, res) {
 //   return `index.html`;
@@ -25,10 +38,6 @@ app.use(express.json());
 app.post("/api/notes", function (req, res) {});
 
 // Listen to this port here
-app.listen(PORT, function () {});
-
-// Start our server
-// server.listen(PORT, function () {
-// Callback triggered?
-//   console.log("Server is listening on:  +" + PORT);
-// });
+app.listen(PORT, function () {
+  console.log("App listening on PORT: " + PORT); // Server is running
+});
