@@ -21,9 +21,6 @@ module.exports = function (app) {
     res.json(noteData);
     console.log(noteData);
   });
-  //   app.get("/index.html", function (req, res) {
-  //     res.sendFile(path.join(_dirname, "/routes/htmlRoutes.js"));
-  //   });
 };
 
 // app.get("/api/notes", function (req, res) {
