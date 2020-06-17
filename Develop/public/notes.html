@@ -38,6 +38,15 @@
       </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="/api/notes">API for Notes</a> |
+        <a href="/api/*">API HTML Routes</a>
+    </div>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
 </body>
@@ -45,7 +54,7 @@
 </html>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
   // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
   // In essence, when the user hits submit/add note button, jQuery grabs all of the fields then sends a post request to our api
@@ -65,4 +74,34 @@
     }
 
     console.log(newNote);
-  });
+
+    // This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+
+    $.post("/api/notes", newNote, // The actual point where the information from front end and back end meet
+      function (data) { // Call back function
+        console.log(data) // The JavaScript that runs is getting information from the apiRoutes.js file  lines 43-50
+
+        // If a new note is made... save the note.
+        // if (note) {
+        //   saveNote();
+        // }
+
+        // If a table is available... tell user they on the waiting list.
+        // else {
+        //   alert("Sorry you are on the wait list");
+        // }
+
+        // Clear the form when submitting
+//         $("#reserve-name").val("");
+//         $("#reserve-phone").val("");
+//         $("#reserve-email").val("");
+//         $("#reserve-unique-id").val("");
+
+//       });
+
+//   });
+
+// </script> -->

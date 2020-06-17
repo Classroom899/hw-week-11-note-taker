@@ -21,12 +21,6 @@ app.use(express.static("public"));
 //   )
 // );
 
-// Might just be a readfile command and only one command
-
-// function handleRequest() {
-//    case "/index.html":
-// }
-
 // Routing
 require("./routes/apiNotes")(app);
 require("./routes/htmlRoutes")(app);
