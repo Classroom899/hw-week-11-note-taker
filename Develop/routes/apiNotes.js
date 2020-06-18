@@ -4,6 +4,8 @@
 
 const fs = require("fs");
 const noteData = require("../data/noteData");
+const dbNotes = require("../db/db.json");
+console.log(dbNotes);
 
 // Routing
 module.exports = function (app) {
@@ -12,7 +14,7 @@ module.exports = function (app) {
   // });
   app.get("/api/notes", function (req, res) {
     res.json(noteData);
-    let activeNote = fs.readFileSync("db.json");
+    let activeNote = fs.readFileSync();
     res.json(activeNote);
   });
 
@@ -21,12 +23,20 @@ module.exports = function (app) {
     res.json(noteData);
     console.log(noteData);
   });
+
+  app.get("/db/db.json", function (req, res) {
+    path.join(__dirname, "../db/db.json");
+    return res.json(dbNotes);
+  });
+
+  // Parsing the dbNotes into JSON data and creating that readFilesSync path along with adding a catch and throw for errors
+  // const dbNotes = json.parse(
+  //   fs.readFilesSync(
+  //     path.join(__dirname, "/db.json"),
+  //     (err,
+  //     (app) => {
+  //       if (err) throw err;
+  //     })
+  //   )
+  // );
 };
-
-// app.get("/api/notes", function (req, res) {
-//   return res.json(dbNotes);
-// });
-
-// app.get("/notes", function (req, res) {
-//   res.sendFile(path.join(_dirname, "/public/assets/js/index.js"));
-// });

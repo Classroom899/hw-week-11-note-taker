@@ -10,24 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Parsing the dbNotes into JSON data and creating that readFilesSync path along with adding a catch and throw for errors
-// const dbNotes = JSON.parse(
-//   fs.readFilesSync(
-//     path.join(_dirname, "/db.json"),
-//     (err,
-//     (app) => {
-//       if (err) throw err;
-//     })
-//   )
-// );
-
 // Routing
 require("./routes/apiNotes")(app);
 require("./routes/htmlRoutes")(app);
-
-// app.get("/add", function (req, res) {
-//   return `index.html`;
-// });
 
 // Posting the actual notes and takes in JSON input
 app.post("/api/notes", function (req, res) {});
