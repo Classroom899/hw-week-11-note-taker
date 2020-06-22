@@ -25,13 +25,6 @@ module.exports = function (app) {
     fs.writeFile("./db/db.json", JSON.stringify(activeNotes), function () {
       res.json(req.body);
     });
-
-    // noteData.push(req.body);
-    // res.json(noteData);
-    // data.id = id++;
-    // while (noteData.includes(id)) {
-    //   id++;
-    // }
   });
 
   app.get("/db/db.json", function (req, res) {
