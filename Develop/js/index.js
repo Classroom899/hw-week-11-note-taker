@@ -32,6 +32,8 @@ const deleteNote = (id) => {
   });
 };
 
+app.delete("/api/notes/:id", function (req, res) {});
+
 // If there is an activeNote, display it, otherwise render empty inputs
 const renderActiveNote = () => {
   $saveNoteBtn.hide();
@@ -74,6 +76,7 @@ const handleNoteDelete = function (event) {
   }
 
   deleteNote(note.id).then(() => {
+    // This is where target id is being hit
     getAndRenderNotes();
     renderActiveNote();
   });

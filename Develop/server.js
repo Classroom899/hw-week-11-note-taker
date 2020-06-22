@@ -15,7 +15,7 @@ require("./routes/apiNotes")(app);
 require("./routes/htmlRoutes")(app);
 
 // Posting the actual notes and takes in JSON input
-app.post("/api/notes", function (req, res) {});
+// app.post("/api/notes", function (req, res) {});
 
 // Listen to this port here
 app.listen(PORT, function () {
