@@ -20,11 +20,24 @@ module.exports = function (app) {
     body.id = 1;
     let activeNotes = fs.readFileSync("./db/db.json");
     activeNotes = JSON.parse(activeNotes);
-    req.body.id = activeNotes[activeNotes.length - 1].id + 1;
+    console.log("We are here", activeNotes);
+    if (activeNotes.length == 0) {
+      req.body.id = 1;
+    } else {
+      req.body.id = activeNotes[activeNotes.length - 1].id + 1;
+    }
     activeNotes.push(req.body);
+    console.log("Another string", activeNotes);
     fs.writeFile("./db/db.json", JSON.stringify(activeNotes), function () {
       res.json(req.body);
     });
+
+    // noteData.push(req.body);
+    // res.json(noteData);
+    // data.id = id++;
+    // while (noteData.includes(id)) {
+    //   id++;
+    // }
   });
 
   app.get("/db/db.json", function (req, res) {
